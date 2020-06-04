@@ -17,11 +17,11 @@ public class Main {
         String fileName = scn.nextLine();
         File file = new File(fileName);
         Scanner scn1 = new Scanner(file);
-        String line = scn1.nextLine();
+        String text = scn1.nextLine();
 
         //Java-map
         HashMap<String, Integer> map = new HashMap<>();
-        Task.execute(line, map);
+        Task.findAbbreviationsInMap(text, map);
 
         for (Map.Entry<String, Integer> pair : map.entrySet()) {
             System.out.println(pair.getKey() + "=" + pair.getValue());
@@ -31,7 +31,7 @@ public class Main {
 
         //Собственная map
         MyOwnMap<String, Integer> newMap = new MyOwnMap<>(100);
-        Task.execute(line, newMap);
+        Task.findAbbreviationsInMap(text, newMap);
 
         for (Map.Entry<String, Integer> pair : newMap.entrySet()) {
             System.out.println(pair.getKey() + "=" + pair.getValue());

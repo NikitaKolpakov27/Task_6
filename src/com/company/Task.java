@@ -1,11 +1,10 @@
 package com.company;
 
-import java.util.Arrays;
 import java.util.Map;
 
 class Task {
 
-    static void execute(String line, Map<String, Integer> map) {
+    static void findAbbreviationsInMap(String line, Map<String, Integer> map) {
         String[] words = line.split("[ ,.:()]");
 
         for (int i = 0; i < words.length; i++) {
@@ -20,11 +19,7 @@ class Task {
             if (countLetters(words[i], map) == 0) {
                 map.put(words[i], count);
             }
-
         }
-
-        System.out.println(Arrays.toString(words));
-
     }
 
     private static int countLetters(String str, Map<String, Integer> map) {
