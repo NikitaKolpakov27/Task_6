@@ -1,8 +1,9 @@
 package com.company;
 
+import java.util.HashMap;
 import java.util.Map;
 
-class Task {
+class Implementation_JavaMap {
 
     static void findAbbreviationsInMap(String line, Map<String, Integer> map) {
         String[] words = line.split("[ ,.:()]");
