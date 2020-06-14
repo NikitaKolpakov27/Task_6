@@ -2,10 +2,8 @@ package com.company;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.Map;
 import java.lang.String;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -21,7 +19,7 @@ public class Main {
 
         //Java-map
         HashMap<String, Integer> map = new HashMap<>();
-        Task.findAbbreviationsInMap(text, map);
+        Implementation_JavaMap.findAbbreviationsInMap(text, map);
 
         for (Map.Entry<String, Integer> pair : map.entrySet()) {
             System.out.println(pair.getKey() + "=" + pair.getValue());
@@ -30,13 +28,12 @@ public class Main {
         System.out.println("\n");
 
         //Собственная map
-        MyOwnMap<String, Integer> newMap = new MyOwnMap<>(100);
-        Task.findAbbreviationsInMap(text, newMap);
+        NewMap<String, Integer> mp = new NewMap<>();
+        Implementation_NewMap.findAbbreviationsInNewMap(text, mp);
 
-        for (Map.Entry<String, Integer> pair : newMap.entrySet()) {
-            System.out.println(pair.getKey() + "=" + pair.getValue());
+        for (int i = 0; i < mp.size(); i++) {
+            System.out.println(mp.getPair(i));
         }
-
 
 
     }
